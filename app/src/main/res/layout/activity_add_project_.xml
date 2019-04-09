@@ -1,0 +1,254 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/blueg"
+    tools:context=".Add_project_Activity">
+
+
+
+   <ScrollView
+       android:layout_width="match_parent"
+       android:layout_height="wrap_content">
+
+       <RelativeLayout
+           android:layout_width="match_parent"
+           android:layout_height="wrap_content">
+
+           <TextView
+               android:id="@+id/textView9"
+               android:layout_width="match_parent"
+               android:layout_height="wrap_content"
+               android:layout_marginTop="28dp"
+               android:layout_marginLeft="10dp"
+               android:layout_marginRight="10dp"
+               android:background="#4CEB3A"
+               android:fontFamily="sans-serif-light"
+               android:text="Project Details"
+               android:textAlignment="center"
+               android:textSize="24sp"
+
+               />
+
+
+           <EditText
+               android:id="@+id/projecttitle"
+               android:layout_width="match_parent"
+               android:layout_height="wrap_content"
+               android:layout_alignParentStart="true"
+               android:layout_alignParentEnd="true"
+               android:ems="10"
+               android:textColor="#ffff"
+               android:hint="Enter project title"
+               android:inputType="textPersonName"
+               android:textColorHint="#ffff"
+               android:layout_below="@+id/textView9"
+               android:layout_marginTop="10dp"
+               android:padding="4dp"
+                />
+
+           <EditText
+               android:id="@+id/abstractproject"
+               android:layout_width="match_parent"
+               android:layout_height="wrap_content"
+               android:layout_below="@+id/projecttitle"
+               android:layout_alignParentStart="true"
+               android:layout_alignParentEnd="true"
+               android:layout_marginTop="20dp"
+               android:padding="4dp"
+               android:textColor="#ffff"
+               android:ems="10"
+               android:hint="Abstract"
+               android:layout_marginBottom="4dp"
+               android:inputType="textMultiLine"
+               android:textColorHint="#ffff"/>
+
+
+           <EditText
+               android:id="@+id/mentorname"
+               android:layout_width="344dp"
+               android:layout_height="wrap_content"
+               android:layout_below="@+id/abstractproject"
+               android:layout_alignParentStart="true"
+               android:layout_alignParentEnd="true"
+               android:layout_marginTop="20dp"
+               android:ems="10"
+               android:textColor="#ffff"
+               android:hint="Mentor name(if present)"
+               android:inputType="textPersonName"
+               android:textColorHint="#ffff"
+               />
+
+           <TextView
+               android:id="@+id/textView5"
+               android:layout_width="wrap_content"
+               android:layout_height="wrap_content"
+               android:layout_below="@+id/mentorname"
+               android:layout_alignParentStart="true"
+               android:layout_marginTop="28dp"
+               android:text="Skills Required"
+               android:textAlignment="center"
+               android:textColor="#ffff"
+               android:textSize="20dp"
+               app:layout_constraintEnd_toEndOf="parent"
+               app:layout_constraintStart_toStartOf="parent"
+               app:layout_constraintTop_toBottomOf="@+id/mentorname"
+               tools:layout_editor_absoluteX="115dp" />
+
+           <EditText
+               android:textColor="#ffff"
+               android:id="@+id/skill1"
+               android:layout_width="186dp"
+               android:layout_height="wrap_content"
+               android:layout_below="@+id/textView5"
+               android:layout_marginTop="8dp"
+               android:ems="10"
+               android:hint="Skill_1"
+               android:inputType="textPersonName"
+               android:textColorHint="#ffff"
+               app:layout_constraintStart_toStartOf="parent"
+               app:layout_constraintTop_toBottomOf="@+id/textView5"
+               tools:layout_editor_absoluteX="8dp" />
+
+           <EditText
+               android:id="@+id/skill2"
+               android:layout_width="186dp"
+               android:layout_height="wrap_content"
+               android:layout_alignTop="@+id/skill1"
+               android:layout_alignParentEnd="true"
+               android:layout_marginTop="8dp"
+               android:ems="10"
+               android:hint="Skill_2"
+               android:inputType="textPersonName"
+               android:textColorHint="#ffff"
+               android:textColor="#ffff"
+               app:layout_constraintStart_toStartOf="parent"
+               app:layout_constraintTop_toBottomOf="@+id/skill1"
+               tools:layout_editor_absoluteX="8dp" />
+
+           <EditText
+               android:id="@+id/skill3"
+               android:layout_width="212dp"
+               android:layout_height="wrap_content"
+               android:layout_below="@+id/skill1"
+               android:layout_alignParentStart="true"
+               android:layout_marginTop="8dp"
+               android:layout_toStartOf="@+id/skill2"
+               android:ems="10"
+               android:hint="Skill_3"
+               android:textColor="#ffff"
+               android:inputType="textPersonName"
+               android:textColorHint="#ffff"
+               app:layout_constraintEnd_toEndOf="parent"
+               app:layout_constraintStart_toEndOf="@+id/skill2"
+               app:layout_constraintTop_toBottomOf="@+id/skill4"
+               tools:layout_editor_absoluteX="171dp" />
+
+           <EditText
+               android:id="@+id/skill4"
+               android:layout_width="209dp"
+               android:layout_height="wrap_content"
+               android:layout_alignParentEnd="true"
+               android:ems="10"
+               android:hint="Skill_4"
+               android:textColor="#ffff"
+               android:layout_toRightOf="@+id/skill3"
+               android:layout_below="@+id/skill2"
+               android:inputType="textPersonName"
+               android:textColorHint="#ffff" />
+
+           <EditText
+               android:id="@+id/github"
+               android:layout_width="match_parent"
+               android:layout_height="wrap_content"
+               android:layout_alignParentEnd="true"
+               android:ems="10"
+               android:textColor="#ffff"
+               android:hint="Enter GitHub Link"
+               android:layout_marginTop="30dp"
+               android:layout_below="@+id/skill3"
+               android:inputType="textPersonName"
+               android:textColorHint="#ffff" />
+
+           <TextView
+               android:id="@+id/textView15"
+               android:layout_width="match_parent"
+               android:layout_height="wrap_content"
+               android:layout_below="@id/github"
+               android:layout_marginLeft="10dp"
+               android:layout_marginTop="22dp"
+               android:layout_marginRight="10dp"
+               android:fontFamily="sans-serif-light"
+               android:text=" No. Of Partners Required"
+               android:textAlignment="center"
+               android:textColor="#ffff"
+               android:textSize="24sp"/>
+
+           <RadioGroup
+               android:id="@+id/radioGroup"
+               android:layout_width="wrap_content"
+               android:layout_height="wrap_content"
+               android:layout_below="@+id/textView15"
+               android:layout_alignParentStart="true"
+               android:layout_marginTop="8dp"
+               android:layout_marginBottom="8dp"
+               android:orientation="horizontal"
+               tools:layout_editor_absoluteX="181dp">
+
+               <RadioButton
+                   android:id="@+id/radioButton0"
+                   android:layout_width="wrap_content"
+                   android:layout_height="wrap_content"
+                   android:layout_below="@+id/textView6"
+                   android:layout_alignParentStart="true"
+                   android:text="0" />
+
+               <RadioButton
+                   android:id="@+id/radioButton1"
+                   android:layout_width="wrap_content"
+                   android:layout_height="wrap_content"
+                   android:layout_below="@+id/textView6"
+                   android:layout_marginEnd="11dp"
+                   android:layout_toStartOf="@+id/radioButton2"
+                   android:text="1" />
+
+               <RadioButton
+                   android:id="@+id/radioButton2"
+                   android:layout_width="wrap_content"
+                   android:layout_height="wrap_content"
+                   android:layout_below="@+id/textView6"
+                   android:layout_toEndOf="@+id/radioButton5"
+                   android:text="2" />
+
+               <RadioButton
+                   android:id="@+id/radioButton3"
+                   android:layout_width="wrap_content"
+                   android:layout_height="wrap_content"
+                   android:layout_below="@+id/textView6"
+                   android:layout_toEndOf="@+id/textView7"
+                   android:text="3" />
+           </RadioGroup>
+
+           <Button
+               android:id="@+id/buttonsubmit"
+               android:layout_width="match_parent"
+               android:layout_height="48dp"
+               android:layout_alignParentEnd="true"
+               android:layout_alignParentBottom="true"
+               android:layout_marginTop="8dp"
+               android:layout_marginBottom="8dp"
+               android:text="Submit Your Project"
+               android:layout_below="@+id/radioGroup">
+
+           </Button>
+
+
+
+       </RelativeLayout>
+
+
+   </ScrollView>
+
+</RelativeLayout>

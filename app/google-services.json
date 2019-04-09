@@ -1,0 +1,44 @@
+{
+  "project_info": {
+    "project_number": "161932115053",
+    "firebase_url": "https://upesassistance1.firebaseio.com",
+    "project_id": "upesassistance1",
+    "storage_bucket": "upesassistance1.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:161932115053:android:5f5f51770c2e3ad2",
+        "android_client_info": {
+          "package_name": "com.intern.mayank.upesassistance1"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "161932115053-ue92mr3a6ulhpr5gdb6d0jruu986apo4.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.intern.mayank.upesassistance1",
+            "certificate_hash": "d94116c416a630e91e830f68e10101df595af007"
+          }
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBt9VW2jR5xUqr1S7IrONA2xaBgGrrFHg0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "161932115053-kut54hivdln9o5evo49bbit0jefscgb3.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
