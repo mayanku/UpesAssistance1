@@ -9,7 +9,12 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".SkillsActivity"></activity>
+        <activity android:name=".ChooseMentorActivity"></activity>
+        <activity android:name=".JoinLearningProject" />
+        <activity android:name=".AddLearningProject" />
+        <activity android:name=".SkillsActivity" />
+        <activity android:name=".Project_learning_Activity" />
+        <activity android:name=".ChooseProjectActivity" />
         <activity android:name=".SettingsActivity" />
         <activity android:name=".GroupChatActivity" />
         <activity android:name=".ChatActivity" />

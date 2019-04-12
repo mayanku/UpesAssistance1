@@ -22,7 +22,7 @@ import com.google.firebase.database.ValueEventListener;
 
 import java.util.ArrayList;
 
-public class Join_project_activity extends AppCompatActivity {
+public class JoinLearningProject extends AppCompatActivity {
     ListView projectView;
     FirebaseDatabase dat;
     DatabaseReference pro;
@@ -38,7 +38,7 @@ public class Join_project_activity extends AppCompatActivity {
         pp=new projec();
         projectView=(ListView)findViewById(R.id.listview);
         dat=FirebaseDatabase.getInstance();
-        pro=FirebaseDatabase.getInstance().getReference().child("Projects").child("Academic");
+        pro=FirebaseDatabase.getInstance().getReference().child("Projects").child("Learning");
         //list=new ArrayList<>();
         //adapter=new ArrayAdapter<String>(this,R.layout.project_info,R.id.projectinfo,list);
         projectView.setAdapter(new FirebaseListAdapter<projec>(this, projec.class,
@@ -61,7 +61,7 @@ public class Join_project_activity extends AppCompatActivity {
                 dialog.setContentView(R.layout.info_project);
                 dialog.getWindow().setLayout(ActionBar.LayoutParams.FILL_PARENT, ActionBar.LayoutParams.FILL_PARENT);
                 String selected = ((TextView) view.findViewById(R.id.projectinfo)).getText().toString();
-                pro=FirebaseDatabase.getInstance().getReference().child("Projects").child("Academic").child(selected);
+                pro=FirebaseDatabase.getInstance().getReference().child("Projects").child("Learning").child(selected);
                 pro.addValueEventListener(new ValueEventListener() {
                     @Override
                     public void onDataChange(DataSnapshot dataSnapshot) {
@@ -116,8 +116,6 @@ public class Join_project_activity extends AppCompatActivity {
             }
 
         });
-
-
 
     }
 }

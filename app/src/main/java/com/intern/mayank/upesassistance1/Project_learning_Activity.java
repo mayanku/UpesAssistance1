@@ -6,34 +6,36 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 
-public class ProjectActivity extends AppCompatActivity {
-Button joinproject,addproject;
+public class Project_learning_Activity extends AppCompatActivity {
+Button addproject,joinproject;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_project);
+
         joinproject=(Button)findViewById(R.id.joinproject);
         addproject=(Button)findViewById(R.id.newproject);
         addproject.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                sendUserToAddProject();
+                sendUserToAddLearningProject();
             }
         });
         joinproject.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                sendUserToJoinProject();
+                sendUserToJoinLearningProject();
             }
         });
     }
 
-    private void sendUserToAddProject() {
-        Intent joinproject=new Intent(ProjectActivity.this,Add_project_Activity.class);
+    private void sendUserToAddLearningProject() {
+        Intent joinproject=new Intent(Project_learning_Activity.this,AddLearningProject.class);
         startActivity(joinproject);
     }
-    private void sendUserToJoinProject() {
-        Intent addproject=new Intent(ProjectActivity.this,Join_project_activity.class);
+    private void sendUserToJoinLearningProject() {
+        Intent addproject=new Intent(Project_learning_Activity.this,JoinLearningProject.class);
         startActivity(addproject);
     }
-}
+    }
+

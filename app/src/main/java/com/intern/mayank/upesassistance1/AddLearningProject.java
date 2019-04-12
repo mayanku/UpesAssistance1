@@ -22,8 +22,8 @@ import com.google.firebase.database.ValueEventListener;
 
 import java.util.HashMap;
 
-public class Add_project_Activity extends AppCompatActivity {
-EditText projecttitle,abstractproject,skill1,skill2,skill3,skill4,mentorname,github;
+public class AddLearningProject extends AppCompatActivity {
+    EditText projecttitle,abstractproject,skill1,skill2,skill3,skill4,mentorname,github;
     RadioButton radioButton0,radioButton1,radioButton2,radioButton3;
     Button buttonsubmit;
     DatabaseReference reference,Rootref,RootRef;
@@ -31,7 +31,6 @@ EditText projecttitle,abstractproject,skill1,skill2,skill3,skill4,mentorname,git
     String projectabstract,projecttitles,sk_1,sk_2,sk_3,sk_4,mentor,personrequired,n;
     private String currentUserID,currentUserName;
     FirebaseUser currentUser;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -40,15 +39,15 @@ EditText projecttitle,abstractproject,skill1,skill2,skill3,skill4,mentorname,git
         currentUserID=auth.getCurrentUser().getUid();
         Rootref= FirebaseDatabase.getInstance().getReference().child("Users");
         RootRef=FirebaseDatabase.getInstance().getReference();
-       getUserInfo();
+        getUserInfo();
         InitializeMethods();
-       buttonsubmit.setOnClickListener(new View.OnClickListener() {
-           @Override
-           public void onClick(View view) {
-               EnterProjectData();
+        buttonsubmit.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                EnterProjectData();
 
-           }
-       });
+            }
+        });
     }
 
     private void EnterProjectData() {
@@ -77,13 +76,10 @@ EditText projecttitle,abstractproject,skill1,skill2,skill3,skill4,mentorname,git
 
         post(projecttitles,projectabstract,sk_1,sk_2,sk_3,sk_4,mentor,personrequired,n);
 
-
-
-
     }
 
     private void post(final String projecttitles,final String projectabstract, final String sk_1,final String sk_2,final String sk_3,final String sk_4,final String mentor,final String personrequired,final String n){
-        reference = FirebaseDatabase.getInstance().getReference("Projects").child("Academic").child(projecttitles);
+        reference = FirebaseDatabase.getInstance().getReference("Projects").child("Learning").child(projecttitles);
         auth= FirebaseAuth.getInstance();
         currentUserID=auth.getCurrentUser().getUid();
         final HashMap<String, String> hashMap = new HashMap<>();
@@ -103,7 +99,7 @@ EditText projecttitle,abstractproject,skill1,skill2,skill3,skill4,mentorname,git
             @Override
             public void onComplete(@NonNull Task<Void> task) {
                 if(task.isSuccessful()){
-                    Intent projectss=new Intent(getApplicationContext(),ChooseMentorActivity.class);
+                    Intent projectss=new Intent(getApplicationContext(),ProjectActivity.class);
                     Toast.makeText(getApplicationContext(),"Your project is inserted",Toast.LENGTH_SHORT).show();
                     startActivity(projectss);
                 }else {
@@ -150,9 +146,10 @@ EditText projecttitle,abstractproject,skill1,skill2,skill3,skill4,mentorname,git
             @Override
             public void onComplete(@NonNull Task<Void> task) {
                 if(task.isSuccessful()){
-                    Toast.makeText(Add_project_Activity.this,groupName + "group is created successfull",Toast.LENGTH_LONG).show();
+                    Toast.makeText(AddLearningProject.this,groupName + "group is created successfull",Toast.LENGTH_LONG).show();
                 }
             }
         });
     }
-}
+    }
+

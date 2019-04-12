@@ -20,6 +20,7 @@ import com.google.firebase.auth.FirebaseAuth;
 public class StudentDetailsActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
 Button projectcollab,events,bookrecommendation,chats;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -31,7 +32,7 @@ Button projectcollab,events,bookrecommendation,chats;
         projectcollab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent collab=new Intent(StudentDetailsActivity.this,ProjectActivity.class);
+                Intent collab=new Intent(StudentDetailsActivity.this,ChooseProjectActivity.class);
                 startActivity(collab);
             }
         });
@@ -87,7 +88,10 @@ Button projectcollab,events,bookrecommendation,chats;
 
         //noinspection SimplifiableIfStatement
         if (id == R.id.action_settings) {
-            return true;
+
+         /*   Intent se=new Intent(getApplicationContext(),SkillsActivity.class);
+            startActivity(se);
+            return true;*/
         }
 
 

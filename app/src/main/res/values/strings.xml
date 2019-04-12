@@ -13,4 +13,16 @@
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
 
+    <string name="autocompletehint">Enter your skill(s) e.g. Android, PHP</string>
+    <string-array name="skills">
+        <item>PHP</item>
+        <item>Android</item>
+        <item> python </item>
+        <item> C</item>
+        <item> c++ </item>
+        <item>Machine Learning</item>
+        <item>Artificial Intelligence</item>
+        <item>Java</item>
+    </string-array>
+
 </resources>
