@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".BooksRecommendationActivity">
+
+    <AutoCompleteTextView
+        android:id="@+id/multiAutoCompleteTextVie"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:completionThreshold="1"
+        android:textColorHint="#000"
+        android:hint="@string/autocompletehint"
+        />
+
+
+
+
+    <ListView
+        android:id="@+id/list_books"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/multiAutoCompleteTextVie"
+        android:layout_marginTop="10dp"
+        />
+</RelativeLayout>

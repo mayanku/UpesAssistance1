@@ -39,13 +39,14 @@ public class GroupChatActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_group_chat);
+
           mAuth = FirebaseAuth.getInstance();
           currentGroupName = getIntent().getExtras().get("groupName").toString();
           currentUserId = mAuth.getCurrentUser().getUid();
            UserRef = FirebaseDatabase.getInstance().getReference().child("Users");
          GroupNameRef = FirebaseDatabase.getInstance().getReference().child("Groups").child(currentGroupName);
-          InitializeMethods();
           getUserInfo();
+        InitializeMethods();
           sendMessageButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -141,7 +142,10 @@ public class GroupChatActivity extends AppCompatActivity {
         sendMessageButton=(ImageButton)findViewById(R.id.send_message_button);
         userMessageInput=(EditText)findViewById(R.id.groupMessage);
         displayTextMessages=(TextView)findViewById(R.id.group_chat_text_display);
-        mScrollView=(ScrollView)findViewById(R.id.my_scroll_view);}
+        mScrollView=(ScrollView)findViewById(R.id.my_scroll_view);
+         mtoolbar=(Toolbar)findViewById(R.id.group_chat_bar_layout);
+           setSupportActionBar(mtoolbar);
+           getSupportActionBar().setTitle(currentGroupName);}
 
     private void DisplayMessages(DataSnapshot dataSnapshot){
         Iterator iterator= dataSnapshot.getChildren().iterator();
@@ -151,7 +155,7 @@ public class GroupChatActivity extends AppCompatActivity {
             String chatMessage=(String) ((DataSnapshot)iterator.next()).getValue();
             String chatName=(String) ((DataSnapshot)iterator.next()).getValue();
 
-            displayTextMessages.append(chatName + "\n" + chatMessage + "\n" + chatTime + "  " +chatDate + "\n\n\n" );
+            displayTextMessages.append(chatName+":" + "\n" + chatMessage + "\n\n\n" );
             mScrollView.fullScroll(ScrollView.FOCUS_DOWN);
         } }}
 

@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="10dp"
+        android:layout_marginLeft="3dp"
+        android:text="receiver messages here"
+        android:padding="10dp"
+        android:textSize="14sp"
+        android:textStyle="bold"
+        android:textColor="#000000"
+        android:id="@+id/receiver_message_end"
+        android:background="@drawable/receiver_messages_layout"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/sender_message_text"
+        android:layout_alignParentEnd="true"
+        android:layout_marginTop="10dp"
+        android:layout_alignParentTop="@id/receiver_message_end"
+        android:textSize="14dp"
+        android:padding="10dp"
+        android:textStyle="bold"
+        android:text="Sender"
+        android:textColor="#000000"
+
+        />
+
+</RelativeLayout>

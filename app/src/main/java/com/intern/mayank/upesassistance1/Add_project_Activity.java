@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.text.TextUtils;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -39,9 +40,9 @@ EditText projecttitle,abstractproject,skill1,skill2,skill3,skill4,mentorname,git
         auth= FirebaseAuth.getInstance();
         currentUserID=auth.getCurrentUser().getUid();
         Rootref= FirebaseDatabase.getInstance().getReference().child("Users");
-        RootRef=FirebaseDatabase.getInstance().getReference();
-       getUserInfo();
+        getUserInfo();
         InitializeMethods();
+        buttonsubmit.setText("choose your mentor");
        buttonsubmit.setOnClickListener(new View.OnClickListener() {
            @Override
            public void onClick(View view) {
@@ -59,7 +60,7 @@ EditText projecttitle,abstractproject,skill1,skill2,skill3,skill4,mentorname,git
         sk_3=skill3.getText().toString();
         sk_4=skill4.getText().toString();
         n=github.getText().toString();
-        createNewGroup(projecttitles);
+
         mentor=mentorname.getText().toString();
         if (radioButton0.isChecked()){
             personrequired="0";
@@ -75,7 +76,12 @@ EditText projecttitle,abstractproject,skill1,skill2,skill3,skill4,mentorname,git
         }
         else {personrequired="0";}
 
-        post(projecttitles,projectabstract,sk_1,sk_2,sk_3,sk_4,mentor,personrequired,n);
+
+        if (TextUtils.isEmpty(projecttitles) || TextUtils.isEmpty(projectabstract) || TextUtils.isEmpty(sk_2) || TextUtils.isEmpty(sk_1) || TextUtils.isEmpty(sk_3) || TextUtils.isEmpty(sk_4) ) {
+            Toast.makeText(getApplicationContext(), "Required Fields cannot bee left blank", Toast.LENGTH_SHORT).show();
+        }else{
+            createNewGroup(projecttitles);
+        post(projecttitles,projectabstract,sk_1,sk_2,sk_3,sk_4,mentor,personrequired,n);}
 
 
 
@@ -104,8 +110,15 @@ EditText projecttitle,abstractproject,skill1,skill2,skill3,skill4,mentorname,git
             public void onComplete(@NonNull Task<Void> task) {
                 if(task.isSuccessful()){
                     Intent projectss=new Intent(getApplicationContext(),ChooseMentorActivity.class);
+                    projectss.putExtra("skill1name",sk_1);
+                    projectss.putExtra("title",projecttitles);
+                    projectss.putExtra("abstract",projectabstract);
+                    projectss.putExtra("creator",currentUserName);
+
+
                     Toast.makeText(getApplicationContext(),"Your project is inserted",Toast.LENGTH_SHORT).show();
                     startActivity(projectss);
+
                 }else {
                     Toast.makeText(getApplicationContext(),"Please Try Again",Toast.LENGTH_SHORT).show();
                 }
@@ -146,7 +159,12 @@ EditText projecttitle,abstractproject,skill1,skill2,skill3,skill4,mentorname,git
     }
 
     private void createNewGroup(final String groupName) {
-        RootRef.child("Groups").child(projecttitles).setValue("").addOnCompleteListener(new OnCompleteListener<Void>() {
+        HashMap<String,String> asa=new HashMap<>();
+        asa.put("Date","");
+        asa.put("Time","");
+        asa.put("name","admin");
+        asa.put("message","Welcome To this group. You can talk about your project in this group. There will be mentors helping you for any help required");
+        RootRef.child("Groups").child(projecttitles).push().setValue(asa).addOnCompleteListener(new OnCompleteListener<Void>() {
             @Override
             public void onComplete(@NonNull Task<Void> task) {
                 if(task.isSuccessful()){

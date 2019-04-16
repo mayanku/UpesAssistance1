@@ -4,19 +4,14 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ChooseMentorActivity">
-    <include
-        android:id="@+id/group_chat_bar_layout_button"
-        layout="@layout/app_bar_layout">
-
-    </include>
+    tools:context=".MentorListActivity">
 
     <ListView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/list_mentor"
+        android:id="@+id/list_mentor1"
         android:layout_below="@+id/group_chat_bar_layout_button"
-       >
+        >
 
 
     </ListView>

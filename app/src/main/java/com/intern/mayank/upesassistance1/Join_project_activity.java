@@ -50,8 +50,6 @@ public class Join_project_activity extends AppCompatActivity {
                 ((TextView) v.findViewById(R.id.sk_2)).setText(model.getSkill_2());
                 ((TextView) v.findViewById(R.id.sk_3)).setText(model.getSkill_3());
                 ((TextView) v.findViewById(R.id.sk_4)).setText(model.getSkill_4());
-
-
             }
         });
         projectView.setOnItemClickListener(new AdapterView.OnItemClickListener() {

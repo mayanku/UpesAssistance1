@@ -48,6 +48,8 @@ public class AddLearningProject extends AppCompatActivity {
 
             }
         });
+
+
     }
 
     private void EnterProjectData() {
@@ -99,9 +101,10 @@ public class AddLearningProject extends AppCompatActivity {
             @Override
             public void onComplete(@NonNull Task<Void> task) {
                 if(task.isSuccessful()){
-                    Intent projectss=new Intent(getApplicationContext(),ProjectActivity.class);
+                    Intent projectss=new Intent(getApplicationContext(),ChatActivity.class);
                     Toast.makeText(getApplicationContext(),"Your project is inserted",Toast.LENGTH_SHORT).show();
                     startActivity(projectss);
+                    finish();
                 }else {
                     Toast.makeText(getApplicationContext(),"Please Try Again",Toast.LENGTH_SHORT).show();
                 }
