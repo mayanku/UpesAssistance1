@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/blueg"
+    tools:context=".FacultyRegistrationActivity">
+
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <EditText
+                android:id="@+id/register_namefaculty"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:inputType="textPersonName"
+                android:hint="Enter Your Name..."
+                android:textColor="#ffff"
+                android:textColorHint="#ffff"
+                android:background="@drawable/input"
+                android:padding="4dp"
+                android:layout_marginTop="100dp"
+                android:layout_marginLeft="17dp"
+                android:layout_marginRight="17dp"/>
+            <EditText
+                android:id="@+id/register_emailfaculty"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:layout_below="@+id/register_namefaculty"
+                android:inputType="textEmailAddress"
+                android:hint="Email..."
+                android:textColor="#ffff"
+                android:background="@drawable/input"
+                android:padding="4dp"
+                android:drawableStart="@drawable/email"
+                android:layout_marginTop="25dp"
+                android:layout_marginLeft="17dp"
+                android:layout_marginRight="17dp"
+                android:textColorHint="#ffff"/>
+            <EditText
+                android:id="@+id/register_passwordfaculty"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:layout_below="@+id/register_emailfaculty"
+                android:inputType="textPassword"
+                android:hint="Password"
+                android:textColor="#ffff"
+                android:background="@drawable/input"
+                android:padding="4dp"
+                android:drawableStart="@drawable/password"
+                android:layout_marginTop="25dp"
+                android:layout_marginLeft="17dp"
+                android:layout_marginRight="17dp"
+                android:textColorHint="#ffff"/>
+
+
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Register"
+                android:layout_marginTop="20dp"
+                android:id="@+id/facultyregistration"
+                android:layout_below="@+id/register_passwordfaculty"/>
+        </RelativeLayout>
+    </ScrollView>
+
+
+
+</RelativeLayout>

@@ -1,24 +1,111 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/blueg"
     tools:context=".FacultyLoginActivity">
 
+
+
     <EditText
-        android:id="@+id/numberpass"
-        android:layout_width="150dp"
-        android:inputType="textPassword"
+        android:id="@+id/usernamefaculty"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_centerVertical="true"
-        android:layout_centerHorizontal="true"
-      />
+        android:layout_alignStart="@+id/textView4"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="76dp"
+        android:ems="10"
+        android:hint="Email id"
+        android:inputType="textEmailAddress"
+        android:textColorHint="@color/common_google_signin_btn_text_dark"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView4" />
+
+    <EditText
+        android:id="@+id/passwordfaculty"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/usernamefaculty"
+        android:layout_alignStart="@+id/usernamefaculty"
+        android:layout_marginTop="8dp"
+        android:ems="10"
+        android:hint="Password"
+        android:inputType="textPassword"
+        android:textColorHint="@color/common_google_signin_btn_text_dark"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/usernamefaculty"
+        tools:layout_editor_absoluteX="8dp" />
 
     <Button
-        android:layout_width="match_parent"
+        android:id="@+id/loginfaculty"
+        android:layout_width="395dp"
         android:layout_height="wrap_content"
-        android:id="@+id/loginfsculty"
-        android:layout_below="@+id/numberpass"
-        android:text="LOGIN"/>
-</RelativeLayout>
+        android:layout_below="@+id/passwordfaculty"
+        android:layout_alignStart="@+id/passwordfaculty"
+        android:layout_marginTop="48dp"
+        android:background="#64DD17"
+        android:text="Login"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/passwordfaculty"
+        tools:layout_editor_absoluteX="8dp" />
+
+    <Button
+        android:id="@+id/registerfaculty"
+        android:layout_width="202dp"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/loginfaculty"
+        android:layout_alignParentEnd="true"
+        android:layout_marginTop="8dp"
+        android:layout_marginBottom="8dp"
+        android:background="@drawable/rounded_button_register"
+        android:text="Register"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/loginfaculty"
+        app:layout_constraintVertical_bias="0.205"
+        tools:layout_editor_absoluteX="201dp" />
+
+    <TextView
+        android:id="@+id/textView4"
+        android:layout_width="395dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="95dp"
+        android:fontFamily="sans-serif-black"
+        android:text="Login"
+        android:textAlignment="center"
+        android:textColor="#ffff"
+        android:textSize="30dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:layout_editor_absoluteX="0dp" />
+
+    <TextView
+        android:id="@+id/textView8"
+        android:layout_width="133dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:layout_marginBottom="8dp"
+        android:fontFamily="sans-serif-medium"
+        android:text="New user ?"
+        android:textColor="#ffff"
+        android:textSize="24sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/registerfaculty"
+        app:layout_constraintHorizontal_bias="0.459"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/loginfaculty"
+        app:layout_constraintVertical_bias="0.229"
+        tools:layout_editor_absoluteX="41dp" />
+
+</android.support.constraint.ConstraintLayout>
