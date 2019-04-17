@@ -117,7 +117,6 @@ TextView alreadyhavelink;
         alreadyhavelink=(TextView) findViewById(R.id.already_have_account_link);
         year_spinner=(Spinner)findViewById(R.id.year_spinner);
         loadingbar=new ProgressDialog(StudentRegistrationActivity.this);
-
     }
 
 }

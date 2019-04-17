@@ -6,8 +6,10 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 
+import com.google.firebase.auth.FirebaseAuth;
+
 public class FacultyActivity extends AppCompatActivity {
-Button projectciew,ment,even,chat;
+Button projectciew,ment,even,chat,buttonlogout;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -16,6 +18,15 @@ Button projectciew,ment,even,chat;
         ment=(Button)findViewById(R.id.mento);
         even=(Button)findViewById(R.id.events);
         chat=(Button)findViewById(R.id.groupchats);
+        buttonlogout=(Button)findViewById(R.id.buttonlogout);
+        buttonlogout.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                FirebaseAuth.getInstance().signOut();
+                startActivity(new Intent(getApplicationContext(), FacultyLoginActivity.class));
+                finish();
+            }
+        });
         chat.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
