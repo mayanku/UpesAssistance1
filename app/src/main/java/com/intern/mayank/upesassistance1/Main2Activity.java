@@ -27,13 +27,14 @@ public class Main2Activity extends AppCompatActivity {
                 startActivity(studentactivity);
             }
         });
-     /*   faculty.setOnClickListener(new View.OnClickListener() {
+       faculty.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent facultyactivity = new Intent(getApplicationContext(), FacultyLoginActivity.class);
+                startActivity(facultyactivity);
             }
         });
-*/
+
 
 
     }

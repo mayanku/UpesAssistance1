@@ -27,7 +27,7 @@ import com.google.firebase.database.ValueEventListener;
 
 public class StudentDetailsActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
-Button projectcollab,events,bookrecommendation,chats;
+Button projectcollab,events,bookrecommendation,chats,button5;
 DatabaseReference Rootref;
 FirebaseAuth auth;
 private String currentUserID,currentUserNamee,currentUseremail;
@@ -43,6 +43,13 @@ private String currentUserID,currentUserNamee,currentUseremail;
         InitializaMethos();
         Rootref= FirebaseDatabase.getInstance().getReference().child("Users");
         getUserInfo();
+        events.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent ll=new Intent(StudentDetailsActivity.this,EventActivity.class);
+                startActivity(ll);
+            }
+        });
 
         bookrecommendation.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -67,6 +74,14 @@ private String currentUserID,currentUserNamee,currentUseremail;
             }
         });
 
+        button5.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent da=new Intent(getApplicationContext(),DateSheetActivity.class);
+                startActivity(da);
+            }
+        });
+
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
@@ -83,8 +98,6 @@ private String currentUserID,currentUserNamee,currentUseremail;
                 if (dataSnapshot.exists()) {
                     currentUserNamee = dataSnapshot.child("username").getValue().toString();
                     currentUseremail = dataSnapshot.child("email").getValue().toString();
-
-                    Toast.makeText(getApplicationContext(),currentUserNamee,Toast.LENGTH_LONG).show();
                     NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
                     navigationView.setNavigationItemSelectedListener(StudentDetailsActivity.this);
                     View hView =  navigationView.getHeaderView(0);
@@ -112,6 +125,7 @@ private String currentUserID,currentUserNamee,currentUseremail;
         bookrecommendation=(Button)findViewById(R.id.booksrecommendation);
         chats=(Button)findViewById(R.id.chat);
         auth=FirebaseAuth.getInstance();
+        button5=(Button)findViewById(R.id.button5);
     }
 
     @Override
@@ -173,7 +187,7 @@ private String currentUserID,currentUserNamee,currentUseremail;
             startActivity(me);
 
         } else if (id == R.id.nav_manage) {
-            Intent mes=new Intent(getApplicationContext(),JoinLearningProject.class);
+            Intent mes=new Intent(getApplicationContext(),Project_list_viewActivity.class);
             startActivity(mes);
 
         }

@@ -4,19 +4,11 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    app:layout_behavior="@string/appbar_scrolling_view_behavior"
-    tools:showIn="@layout/app_bar_student_details"
-    android:background="@drawable/blueg">
+    tools:context=".FacultyActivity">
 
-    <ScrollView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content">
-        <RelativeLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content">
 
     <Button
-        android:id="@+id/projectcollab"
+        android:id="@+id/projectciew"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentStart="true"
@@ -25,52 +17,40 @@
         android:layout_marginTop="90dp"
         android:background="@drawable/rounded_button"
         android:padding="20dp"
-        android:text="Project Collabration" />
+        android:text="Check Projects" />
 
     <Button
-        android:id="@+id/booksrecommendation"
+        android:id="@+id/groupchats"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/projectcollab"
+        android:layout_below="@+id/projectciew"
         android:layout_alignParentEnd="true"
         android:layout_marginTop="50dp"
         android:layout_marginEnd="0dp"
         android:background="@drawable/rounded_button_green"
         android:padding="20dp"
-        android:text="Book Recommendation" />
+        android:text="Enter group chats" />
 
     <Button
         android:id="@+id/events"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/booksrecommendation"
+        android:layout_below="@+id/groupchats"
         android:layout_marginTop="55dp"
         android:background="@drawable/rounded_button_register"
         android:padding="20dp"
         android:text="Event news" />
+
     <Button
-        android:id="@+id/button5"
+        android:id="@+id/mento"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@+id/events"
-        android:layout_alignParentStart="true"
-        android:layout_marginStart="0dp"
-        android:layout_marginTop="54dp"
-        android:background="@drawable/rounded_button_extra"
+        android:layout_marginTop="55dp"
+        android:background="@drawable/rounded_button_register"
         android:padding="20dp"
-        android:text="Date Sheet/ Academic calendar" />
-    <Button
-        android:id="@+id/chat"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/button5"
-        android:layout_alignParentStart="true"
-        android:layout_marginStart="0dp"
-        android:layout_marginTop="54dp"
-        android:background="@drawable/rounded_button_green"
-        android:padding="20dp"
-        android:text="Enter Your Chats" />
-        </RelativeLayout>
+        android:text="Mentor List" />
 
-    </ScrollView>
+
+
 </RelativeLayout>

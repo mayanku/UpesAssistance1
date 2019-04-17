@@ -9,7 +9,12 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".ProjectRecommendationActivity"></activity>
+        <activity android:name=".FacultyActivity"></activity>
+        <activity android:name=".FacultyLoginActivity" />
+        <activity android:name=".DateSheetActivity" />
+        <activity android:name=".EventActivity" />
+        <activity android:name=".Project_list_viewActivity" />
+        <activity android:name=".ProjectRecommendationActivity" />
         <activity android:name=".MentorListActivity" />
         <activity android:name=".BooksRecommendationActivity" />
         <activity

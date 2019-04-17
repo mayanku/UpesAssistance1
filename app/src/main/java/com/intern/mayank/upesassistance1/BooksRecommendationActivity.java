@@ -79,6 +79,7 @@ private ArrayAdapter adapter;
                    @Override
                    public void onCancelled(@NonNull DatabaseError databaseError) {
 
+
                    }
                });
                 /*  BookRef.addValueEventListener(new ValueEventListener() {
