@@ -1,5 +1,6 @@
 package com.intern.mayank.upesassistance1;
 
+import android.content.Intent;
 import android.support.design.widget.TabLayout;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
@@ -36,5 +37,13 @@ public class ChatActivity extends AppCompatActivity {
 
 
 
+    }
+
+    @Override
+    public void onBackPressed() {
+        super.onBackPressed();
+
+        Intent ba=new Intent(getApplicationContext(),StudentDetailsActivity.class);
+        startActivity(ba);
     }
 }

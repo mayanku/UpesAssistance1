@@ -76,7 +76,7 @@ public class ChooseMentorActivity extends AppCompatActivity {
                       String mai= dataSnapshot.child("email").getValue().toString();
                       String[] TO=new String[]{mai};
 
-                      String Text=("Please checkout my Project and I request you to mentor us for this project"+ "\n"+ "Title:- "+currentskill2+"\n"+ "Abstract:- "+currentskill3+"\n"+"Creator:- "+currentskill4);
+                      String Text=("Dear Sir/Ma'am" +"\n\n"+ "You have received a request to be the mentor of a new project."+ "\n\n"+ " Its Details are as follows:"+"\n\n" +"Title:- "+currentskill2+"\n"+ "Abstract:- "+currentskill3+"\n"+"Creator:- "+currentskill4+"\n\n"+"To know more about the app you can check the project in the project view section of app UPES Assistance"+"\n\n"+"If you agree to be the mentor of this project please reply to this email"+"\n\n"+"Thank You"+"\n\n"+"Team UPES ASSISTANCE");
                       Intent emailIntent = new Intent(Intent.ACTION_SEND);
 
                       emailIntent.setData(Uri.parse("mailto:"));
@@ -89,6 +89,8 @@ public class ChooseMentorActivity extends AppCompatActivity {
                       try {
                           startActivity(Intent.createChooser(emailIntent, "Send mail..."));
                           finish();
+                          Intent ji=new Intent(getApplicationContext(),GroupChatActivity.class);
+                          startActivity(ji);
                           // Log.i("Finished sending email...", "");
                       } catch (android.content.ActivityNotFoundException ex) {
                           Toast.makeText(getApplicationContext(), "There is no email client installed.", Toast.LENGTH_SHORT).show();

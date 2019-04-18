@@ -103,4 +103,11 @@ public class StudentLoginActivity extends AppCompatActivity {
         startActivity(logl);
 
     }
+
+    @Override
+    public void onBackPressed() {
+        super.onBackPressed();
+        Intent ne=new Intent(getApplicationContext(),Main2Activity.class);
+        startActivity(ne);
+    }
 }

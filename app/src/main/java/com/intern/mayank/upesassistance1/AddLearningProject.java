@@ -149,7 +149,7 @@ public class AddLearningProject extends AppCompatActivity {
             @Override
             public void onComplete(@NonNull Task<Void> task) {
                 if(task.isSuccessful()){
-                    Toast.makeText(AddLearningProject.this,groupName + "group is created successfull",Toast.LENGTH_LONG).show();
+                    Toast.makeText(AddLearningProject.this,groupName + "group is created successful",Toast.LENGTH_LONG).show();
                 }
             }
         });

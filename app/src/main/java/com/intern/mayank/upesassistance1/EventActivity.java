@@ -48,15 +48,8 @@ public class EventActivity extends AppCompatActivity {
                         .load(message)
                         .into((ImageView)v.findViewById(R.id.img));
 
-
-
             }
         });
-
-
-
-
-
     }
 
 

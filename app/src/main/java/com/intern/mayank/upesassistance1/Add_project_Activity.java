@@ -39,6 +39,7 @@ EditText projecttitle,abstractproject,skill1,skill2,skill3,skill4,mentorname,git
         setContentView(R.layout.activity_add_project_);
         auth= FirebaseAuth.getInstance();
         currentUserID=auth.getCurrentUser().getUid();
+        RootRef=FirebaseDatabase.getInstance().getReference();
         Rootref= FirebaseDatabase.getInstance().getReference().child("Users");
         getUserInfo();
         InitializeMethods();
@@ -163,12 +164,12 @@ EditText projecttitle,abstractproject,skill1,skill2,skill3,skill4,mentorname,git
         asa.put("Date","");
         asa.put("Time","");
         asa.put("name","admin");
-        asa.put("message","Welcome To this group. You can talk about your project in this group. There will be mentors helping you for any help required");
+        asa.put("message","Welcome To this group. You can discuss about your project in this group. Mentors will be there for guiding you. ");
         RootRef.child("Groups").child(projecttitles).push().setValue(asa).addOnCompleteListener(new OnCompleteListener<Void>() {
             @Override
             public void onComplete(@NonNull Task<Void> task) {
                 if(task.isSuccessful()){
-                    Toast.makeText(Add_project_Activity.this,groupName + "group is created successfull",Toast.LENGTH_LONG).show();
+                    Toast.makeText(Add_project_Activity.this,groupName + "group is created successful",Toast.LENGTH_LONG).show();
                 }
             }
         });

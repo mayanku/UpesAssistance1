@@ -103,13 +103,9 @@ public class JoinLearningProject extends AppCompatActivity {
                             }
                         });
                     }
-
                     @Override
                     public void onCancelled(DatabaseError databaseError) {
-
-                    }
-                });
-
+                    }});
 
                 dialog.show();
 
